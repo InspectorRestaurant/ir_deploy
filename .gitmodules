@@ -1,0 +1,9 @@
+[submodule "ir_web_client"]
+	path = ir_web_client
+	url = https://github.com/InspectorRestaurant/ir_web_client.git
+[submodule "ir_web_api"]
+	path = ir_web_api
+	url = https://github.com/InspectorRestaurant/ir_web_api.git
+[submodule "ir_data"]
+	path = ir_data
+	url = https://github.com/InspectorRestaurant/ir_data.git
