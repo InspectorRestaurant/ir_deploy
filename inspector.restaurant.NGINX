@@ -1,0 +1,24 @@
+server {
+
+  listen 80;
+  server_name inspector.restaurant;
+  charset utf-8;
+
+  location / {
+    root /www;
+  }
+
+  # Node/Express running at inspector.restaurant/api
+  location /api {
+    proxy_pass http://localhost:4000;
+    proxy_set_header Host $host;
+    proxy_set_header Referer $http_referer;
+    proxy_set_header X-Forwarded-For $remote_addr;
+    proxy_set_header X-NginX-Proxy true;
+    proxy_set_header X-Forwarded-Proto $scheme;
+    proxy_http_version 1.1;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection "upgrade";
+  }
+
+}
